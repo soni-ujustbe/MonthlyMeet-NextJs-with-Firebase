@@ -5,6 +5,7 @@ import { collection, addDoc, setDoc, doc, docs, getDocs, getDoc, updateDoc, dele
 import firebaseApp from '../firebaseConfig';
 import Link from "next/link";
 import { getFirestore, onSnapshot } from "firebase/firestore";
+import { Timestamp } from '@firebase/firestore';
 
 
 const db = getFirestore();
@@ -13,44 +14,40 @@ function UserAdd() {
 
     const [users, setUsers] = useState([]);
     const [username, setUsername] = useState('');
-    const usersCollectionRef = collection(db, "MonthlyMeetData");
-    const router = useRouter();
 
+    const usersCollectionRef = collection(db, "MonthlyMeetData");
+    const router = useRouter(); 
+
+    
 
 const createUser=async(event)=>{
     event.preventDefault();
+    let dt = new Date().toLocaleDateString();
+    let tm = new Date().toLocaleTimeString();
+    //setDate(dt);
     const data={
         username:username,
+        loginTime:tm,
+        loginDate:dt,
     }
-    if (!data) {
-        return {
-          redirect: {
-            destination: '/',
-            permanent: false,
-          },
-        }
-      }
     console.log("User data",data);
-    await addDoc(usersCollectionRef,data);
-
+   await addDoc(usersCollectionRef,data);
     setUsername("");
-
-
 }
 
-// useEffect(() => {
-//     const getContent = async () => {
-//       const data = await getDocs(usersCollectionRef);
+    useEffect(() => {
+    const getContent = async () => {
+      const data = await getDocs(usersCollectionRef);
+      // onSnapshot(collection(db, "dewdropusers3"), (snapshot) => {
+      //   console.log("Suraj", snapshot);
+      //   setUsers(snapshot.docs.map((doc) => ({ ...doc.data(), id: doc.id })));
+      // })
+      setUsers(data.docs.map((doc) => ({ ...doc.data(), id:doc.id })));
+      console.log(data);
+    };
 
-//       // onSnapshot(collection(db, "dewdropusers3"), (snapshot) => {
-//       //   console.log("Suraj", snapshot);
-//       //   setUsers(snapshot.docs.map((doc) => ({ ...doc.data(), id: doc.id })));
-//       // })
-//     //   setUsers(data.docs.map((doc) => ({ ...doc.data(), id:doc.id })));
-//     //   console.log("getdata",data);
-//     };
-//     getContent();
-//   }, []);
+    getContent();
+  }, []);
 
 
   return (
@@ -78,23 +75,25 @@ const createUser=async(event)=>{
 
         {/* //map the userdata */}
 
-        {/* {
+        {
             users && users.map(formUser=>{
                 console.log(formUser);
                 return(
                     <div className="formUser">
 
                         <p>Name: {formUser.username}</p>
-                        <Link href={"/userDetails/[formid]"} as={"/userDetails/" + formUser.id}>
+                        <p>id: {formUser.id}</p>
+                        
+                        {/* <Link href={"/userDetails/[formid]"} as={"/userDetails/" + formUser.id}>
                         <a >link</a>
-                        </Link>
+                        </Link> */}
 
                     </div>
                 )
             })
         }{
             users?<div></div>:null
-        } */}
+        }
 
     </>
     )
