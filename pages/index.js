@@ -8,7 +8,7 @@ import UserAdd from '../component/UserAdd'
 export default function Home() {
   return (
     <div className={styles.container}>
-        <UserAdd />
+        <Form />
     </div>
   )
 }
