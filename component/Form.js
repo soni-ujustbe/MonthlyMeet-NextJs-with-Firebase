@@ -187,7 +187,7 @@ function Form() {
         error?<div className="error"><p>Please Select your name</p></div>:null
       }
           <div className="form-row">
-            <h2>Select Your Name ?</h2>
+            <h2>Select Your Name</h2>
             <br />
             <select onChange={getUserId} >
             <option selected >Select Name</option>
