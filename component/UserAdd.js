@@ -60,7 +60,6 @@ const createUser=async(event)=>{
                         value={username}
                         onChange={( event ) => {
                         setUsername(event.target.value)}} />
-
                     </div>
 
                     <div>
