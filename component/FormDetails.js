@@ -183,7 +183,7 @@ function FormDetails() {
                             <h4>5. What kind of people you prefer to be with? : {formUser.fiveAns}</h4>
                             <h4>6. According to you, which of the followings are important for growth? :  {formUser.sixAns} </h4>
                             
-                          x
+                          
                             {/* {arr.map((x, i) => <option key={i}>{x}</option>)} */}
                            
 
