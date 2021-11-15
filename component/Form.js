@@ -37,7 +37,6 @@ function Form() {
   const [formsubmit, setformsubmit] = useState(false)
 
 
-
   const CreatForm = async (event) => {
     event.preventDefault();
 
@@ -165,6 +164,8 @@ function Form() {
   }, []);
 
   return (
+
+  <>
     <div>
       <div className="logo">
         <a
@@ -209,27 +210,27 @@ function Form() {
             <ul>
               <li><input
                 id="1A"
-                value="answerOne"
+                value="Relationship"
                 name="questionOne"
                 type="radio"
-                checked={onecheck == 'answerOne'}
+                checked={onecheck == 'Relationship'}
                 onChange={questionOne}
               /><label htmlFor="1A">Relationship</label></li>
               <li><input
                 id="1B"
-                value="answerTwo"
+                value="Health"
                 name="questionOne"
                 type="radio"
-                checked={onecheck == 'answerTwo'}
+                checked={onecheck == 'Health'}
                 onChange={questionOne}
               />
                 <label htmlFor="1B">Health</label></li>
               <li><input
                 id="1C"
-                value="answerThree"
+                value="Wealth"
                 name="questionOne"
                 type="radio"
-                checked={onecheck == 'answerThree'}
+                checked={onecheck == 'Wealth'}
                 onChange={questionOne}
               />
                 <label htmlFor="1C"> Wealth</label></li>
@@ -240,27 +241,27 @@ function Form() {
           </div>
 
           <div className="form-row radio-buttons">
-            <h2>2. Do you believe that you can help others?</h2>
+            <h2>2. According to you, people work for ?</h2>
 
             <ul>
               <li>
                 <input
                   id="2A"
-                  value="answerOne"
+                  value="Recognition"
                   name="questionTwo"
                   type="radio"
                   onChange={questionTwo}
-                  checked={twocheck == 'answerOne'}
+                  checked={twocheck == 'Recognition'}
                 /><label htmlFor="2A">Recognition</label>
               </li>
               <li>
                 <input
                   id="2B"
-                  value="answerTwo"
+                  value="Money"
                   name="questionTwo"
                   type="radio"
                   onChange={questionTwo}
-                  checked={twocheck == 'answerTwo'}
+                  checked={twocheck == 'Money'}
 
                 />
                 <label htmlFor="2B">Money</label>
@@ -268,11 +269,11 @@ function Form() {
               <li>
                 <input
                   id="2C"
-                  value="answerThree"
+                  value="Self-Satisfaction"
                   name="questionTwo"
                   type="radio"
                   onChange={questionTwo}
-                  checked={twocheck == 'answerThree'}
+                  checked={twocheck == 'Self-Satisfaction'}
                 />
                 <label htmlFor="2C">Self-Satisfaction</label>
               </li>
@@ -291,11 +292,11 @@ function Form() {
               <li>
                 <input
                   id="3A"
-                  value="answerOne"
+                  value="Yes"
                   name="questionThree"
                   type="radio"
                   onChange={questionThree}
-                  checked={threecheck == 'answerOne'}
+                  checked={threecheck == 'Yes'}
 
                 />
                 <label htmlFor="3A">Yes</label>
@@ -303,11 +304,11 @@ function Form() {
               <li>
                 <input
                   id="3B"
-                  value="answerTwo"
+                  value="No"
                   name="questionThree"
                   type="radio"
                   onChange={questionThree}
-                  checked={threecheck == 'answerTwo'}
+                  checked={threecheck == 'No'}
                 />
 
 
@@ -323,12 +324,12 @@ function Form() {
 
 
           <div className="checkbox-buttons">
-            <h2>4. What do you prefer when it comes to helping others? <span>*</span></h2>
+            <h2>4. What do you prefer when it comes to helping others? </h2>
             <ul>
               <li>
                 <input
                   id="4A"
-                  value="answerOne"
+                  value="Give Mental Support through personal availability"
                   name="questionFour"
                   type="checkbox"
                   onChange={onChangeCheckboxFour}
@@ -340,7 +341,7 @@ function Form() {
               <li>
                 <input
                   id="4B"
-                  value="answerTwo"
+                  value="Give Financial Support"
                   name="questionFour"
                   type="checkbox"
                   onChange={onChangeCheckboxFour}
@@ -352,7 +353,7 @@ function Form() {
               <li>
                 <input
                   id="4C"
-                  value="answerThree"
+                  value="Share contacts to get their work done"
                   name="questionFour"
                   type="checkbox"
                   onChange={onChangeCheckboxFour}
@@ -364,7 +365,7 @@ function Form() {
               </li>
               <li><input
                 id="4D"
-                value="answerFour"
+                value="Receive Money for the help provided"
                 name="questionFour"
                 type="checkbox"
                 //checked={fourcheck == 'answerFour'}
@@ -375,16 +376,16 @@ function Form() {
           </div>
 
           <div className="radio-buttons">
-            <h2>5. What kind of people you prefer to be with?<span>*</span></h2>
+            <h2>5. What kind of people you prefer to be with?</h2>
             <ul>
               <li>
                 <input
                   id="5A"
-                  value="answerOne"
+                  value="Entreprenuers/Businessmen"
                   name="questionFive"
                   type="radio"
                   onChange={questionFive}
-                  checked={fivecheck == 'answerOne'}
+                  checked={fivecheck == 'Entreprenuers/Businessmen'}
 
                 />
                 <label htmlFor="5A">Entreprenuers/Businessmen</label>
@@ -396,11 +397,11 @@ function Form() {
               <li>
                 <input
                   id="5B"
-                  value="answerTwo"
+                  value="Homemakers"
                   name="questionFive"
                   type="radio"
                   onChange={questionFive}
-                  checked={fivecheck == 'answerTwo'}
+                  checked={fivecheck == 'Homemakers'}
 
                 />
                 <label htmlFor="5B">Homemakers</label>
@@ -410,11 +411,11 @@ function Form() {
               <li>
                 <input
                   id="5C"
-                  value="answerThree"
+                  value="Retired"
                   name="questionFive"
                   type="radio"
                   onChange={questionFive}
-                  checked={fivecheck == 'answerThree'}
+                  checked={fivecheck == 'Retired'}
 
                 />
                 <label htmlFor="5C">Retired</label>
@@ -422,11 +423,11 @@ function Form() {
 
               <li><input
                 id="5D"
-                value="answerFour"
+                value="Students"
                 name="questionFive"
                 type="radio"
                 onChange={questionFive}
-                checked={fivecheck == 'answerFour'}
+                checked={fivecheck == 'Students'}
 
               />
                 <label htmlFor="5D">Students</label></li>
@@ -434,11 +435,11 @@ function Form() {
               <li>
                 <input
                   id="5E"
-                  value="answerFive"
+                  value="Employed"
                   name="questionFive"
                   type="radio"
                   onChange={questionFive}
-                  checked={fivecheck == 'answerFive'}
+                  checked={fivecheck == 'Employed'}
 
                 />
                 <label htmlFor="5E">Employed</label>
@@ -448,13 +449,13 @@ function Form() {
           </div>
 
           <div className="checkbox-buttons">
-            <h2>6. What do you prefer when it comes to helping others? <span>*</span></h2>
+            <h2>6. According to you, which of the followings are important for growth ?</h2>
 
             <ul>
               <li>
                 <input
                   id="6A"
-                  value="answerOne"
+                  value="Personal Development"
                   name="questionSix"
                   type="checkbox"
                   onChange={onChangeCheckboxSix}
@@ -466,7 +467,7 @@ function Form() {
               <li>
                 <input
                   id="6B"
-                  value="answerTwo"
+                  value="People Development"
                   name="questionSix"
                   type="checkbox"
                   // checked={sixcheck == 'answerTwo'}
@@ -477,7 +478,7 @@ function Form() {
               <li>
                 <input
                   id="6C"
-                  value="answerThree"
+                  value="Earning Money with minimum efforts"
                   name="questionSix"
                   type="checkbox"
                   onChange={onChangeCheckboxSix}
@@ -491,7 +492,7 @@ function Form() {
               <li>
                 <input
                   id="6D"
-                  value="answerFour"
+                  value="Peace of mind"
                   name="questionSix"
                   type="checkbox"
                   // checked={sixcheck == 'answerFour'}
@@ -519,9 +520,15 @@ function Form() {
         </form>
       </div>
       }
-
     </div>
+
+        
+
+
+  </>
+  
   );
+ 
 }
 
 export default Form

@@ -4,10 +4,12 @@ import Form from '../component/Form';
 import style from '../styles/Home.module.css'
 import FormDetails from '../component/FormDetails';
 
-function FormAcess() {
+function formdetails() {
     return (
-       <Form />
+        <div>
+            <FormDetails />
+        </div>
     )
 }
 
-export default FormAcess
+export default formdetails
